@@ -1,0 +1,177 @@
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  animation: fadeDown 1s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.lang-switcher button {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  margin-left: 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.lang-switcher button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* MAIN */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+p {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.note {
+  text-align: center;
+  font-weight: bold;
+  color: #ff758c;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+/* COLLEGE SECTION */
+.college {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.college img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+.college h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #667eea;
+}
+
+/* GRID FOR CARDS */
+.schemes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* CARD */
+.scheme-card {
+  background: white;
+  color: grey;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+.scheme-card:nth-child(odd) { animation-delay: 0.2s; }
+.scheme-card:nth-child(even) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scheme-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+.scheme-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.scheme-card:hover img {
+  transform: rotate(8deg) scale(1.1);
+}
+.scheme-card h2 {
+  color: #667eea;
+  margin: 0.3rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.scheme-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* DETAILS */
+.details {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  text-align: left;
+  animation: fadeIn 0.6s ease forwards;
+}
+.details h3 {
+  color: #764ba2;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* APPLY BUTTON */
+.scheme-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: black;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+.scheme-card a:hover {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
