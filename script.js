@@ -1,7 +1,28 @@
 const translations = {
-  "en": { "how_to_apply": "How to Apply", "apply_here": "Apply Here" },
-  "mr": { "how_to_apply": "अर्ज कसा करावा", "apply_here": "इथे अर्ज करा" }
+  "en": { 
+    "how_to_apply": "How to Apply", 
+    "apply_here": "Apply Here", 
+    "college_name": "Kavikulguru Institute of Technology and Science",
+    "guidance": "Under the guidance of",
+    "problem_note": "The villagers of Bhojapur are largely unaware of the various government schemes available for their welfare. Due to lack of proper information and guidance, they are unable to apply and take benefits.",
+    "solution_note": "To solve this issue, we have developed a dedicated website that provides details of all major schemes in English and Marathi, along with direct application links, so that villagers can easily understand the schemes and apply without difficulty.",
+    "bhojapur_note": "BHOJAPUR GRAMPANCHAYAT",
+    "solution": "Solution",
+    "click_scheme": "Click on any scheme to learn more about its purpose and how to apply."
+  },
+  "mr": { 
+    "how_to_apply": "अर्ज कसा करावा", 
+    "apply_here": "इथे अर्ज करा", 
+    "college_name": "कविकुलगुरू तंत्रज्ञान व विज्ञान संस्था",
+    "guidance": "मार्गदर्शनाखाली",
+    "problem_note": "भोजापूरचे ग्रामस्थ त्यांच्या कल्याणासाठी उपलब्ध असलेल्या विविध सरकारी योजनांबद्दल मोठ्या प्रमाणात अनभिज्ञ आहेत. योग्य माहिती आणि मार्गदर्शनाच्या अभावामुळे ते अर्ज करू शकत नाहीत आणि लाभ घेऊ शकत नाहीत.",
+    "solution_note": "या समस्येचे निराकरण करण्यासाठी आम्ही एक समर्पित वेबसाइट विकसित केली आहे जी सर्व प्रमुख योजनांची माहिती इंग्रजी आणि मराठीत देते, तसेच थेट अर्ज दुवे देते, जेणेकरून ग्रामस्थांना योजना सहज समजू शकतील आणि अर्ज करता येईल.",
+    "bhojapur_note": "भोजापूर ग्रामपंचायत",
+    "solution": "उपाय",
+    "click_scheme": "प्रत्येक योजनेचे उद्दिष्ट आणि अर्ज कसा करावा, हे जाणून घेण्यासाठी कोणत्याही योजनेवर क्लिक करा."
+  }
 };
+
 
 const schemesData = [
   {
@@ -73,7 +94,7 @@ const schemesData = [
     name: { en: "Beti Bachao Beti Padhao", mr: "बेटी बचाओ बेटी पढाओ" },
     purpose: { en: "Promotes protection and education of girl children.", mr: "मुलींचे संरक्षण व शिक्षणाला प्रोत्साहन." },
     apply: { en: "Linked to Sukanya Samriddhi Yojana. Open SSA account in girl’s name at bank/post office.", mr: "सुकन्या समृद्धी योजनेशी जोडलेली. मुलीच्या नावाने बँक/पोस्ट ऑफिसमध्ये SSA खाते उघडा." },
-    link: "https://wcd.nic.in/bbbp-schemes",
+    link: "https://wcd.nic.in/schemes/beti-bachao-beti-padhao-scheme",
     img: "https://img.icons8.com/color/96/girl.png"
   },
   {
@@ -92,6 +113,16 @@ const schemesList = document.getElementById('schemes-list');
 const langButtons = document.querySelectorAll('.lang-switcher button');
 const docTitle = document.querySelector('title');
 let currentLang = 'en';
+
+
+function updateStaticText(lang) {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+
+  docTitle.textContent = docTitle.getAttribute(`data-${lang}`);
+}
+
 
 function renderSchemes(lang) {
   schemesList.innerHTML = '';
@@ -116,12 +147,6 @@ function renderSchemes(lang) {
   });
 }
 
-function updateStaticText(lang) {
-  headerTitle.textContent = headerTitle.getAttribute(`data-${lang}`);
-  introText.textContent = introText.getAttribute(`data-${lang}`);
-  docTitle.textContent = docTitle.getAttribute(`data-${lang}`);
-  document.documentElement.lang = lang;
-}
 
 langButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -130,6 +155,7 @@ langButtons.forEach(button => {
     renderSchemes(currentLang);
   });
 });
+
 
 updateStaticText(currentLang);
 renderSchemes(currentLang);
