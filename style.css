@@ -292,13 +292,13 @@ p {
 .mentor-section h2 {
   text-align: center;
   color: #667eea;
-  font-size: 50px;
+  font-size: 30px;
   padding-bottom: 30px;
 }
 .members-section h2 {
   text-align: center;
   color: #667eea;
-  font-size: 50px;
+  font-size: 30px;
 }
 .apply {
   font-size: 1.2rem;
@@ -307,4 +307,9 @@ p {
   margin-top: 1rem;
   padding-top: 40px;
   border-top: #121212 solid;
+}
+.college p {
+  font-size: 40px;
+  font-weight: bold;
+  color: #667eea;
 }
