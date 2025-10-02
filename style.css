@@ -314,10 +314,20 @@ p {
   color: #667eea;
 }
 .college .college-name {
-  color: black;
+  color: darkblue;
   font-weight: 600px;
 }
 .college .line-2 {
+  position: relative;
+  top: -20px;
   font-weight: 500px;
   color: rgb(255, 98, 0);
+  font-size: 30px;
+}
+.college .line-3 {
+  position: relative;
+  top: -20px;
+  font-weight: 500px;
+  color: black;
+  font-size: 35px;
 }
