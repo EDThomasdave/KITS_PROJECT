@@ -331,3 +331,10 @@ p {
   color: black;
   font-size: 35px;
 }
+.college .line-4 {
+  position: relative;
+  top: -20px;
+  font-weight: 500px;
+  color: #667eea;
+  font-size: 30px;
+}
